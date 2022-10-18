@@ -3,6 +3,10 @@
     --white-color:#fff;
     --black--color: #000;
     --text--color:#333;
+    --border--color:#dbdbdb;
+    --header--height:120px;
+    --navbar-height:28px;
+    --header-with-search-height: calc(var(--header--height) - var(var(--navbar-height)));
 }
 *{
     box-sizing: inherit;/*ke thua thuoc tinh chua box-sizing*/
@@ -36,6 +40,14 @@ html{
 
     }
 }
+@keyframes growth{
+    from{
+        transform: scale(var(--growth-from));
+    }
+    to{
+        transform: scale(var(--growth-to));
+    }
+}
 /*modal login regist*/
 .modal{
     position: fixed;
@@ -44,6 +56,7 @@ html{
     left: 0;
     bottom: 0;
     display: flex;
+    animation: fadein linear 0.1s;
 }
 .modal__overlay{
     position: absolute;
@@ -52,10 +65,46 @@ html{
     background-color: rgba(0, 0, 0 , 0.4);
 }
 .modal__body{
-    background-color:#fff;
+    --growth-from: 0.7;
+    --growth-to:1;
     margin: auto;
     position: relative;
     z-index: 1;
-    border-radius: 5px;
+    animation: growth linear 0.1s;
+}
+/*button style*/
+.btn{
+    min-width: 124px;
+    height: 34px;
+    text-decoration: none;
+    border-radius: 3px;
+    border: none;
+    font-size: 1.4rem;
+    padding: 0 12px;
+    outline: none;
+    cursor: pointer;
+    color: var(--text--color);
+    display: flex ;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--white-color);
+    line-height: 1.6rem;
+}
 
+.btn.btn--nomal:hover{
+    background-color: rgba(0, 0, 0, 0.2);
+}
+.btn--size-S{
+    height: 32px;
+    font-size: 12px;
+    
+}
+.btn.btn-primary{
+    color: var(--white-color);
+    background-color: var(--primakey);
+}
+.btn.btn-dissabled{
+    color: var(--black--color);
+    cursor: default;
+    background-color: #6a6767;
 }
