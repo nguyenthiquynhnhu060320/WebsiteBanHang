@@ -1,4 +1,5 @@
 :root{
+    --star-gold-color:rgb(241, 241, 16);
     --primakey:#EE4d2d;
     --white-color:#fff;
     --black--color: #000;
@@ -19,7 +20,7 @@ html{
 }
 /*response tac dung tuong thich tren cac man hinh khac nhau*/
 .grid{
-    width: 1500px;
+    width: 1200px;
     max-width: 100%;
     margin: 0 auto;
 }
@@ -29,19 +30,24 @@ html{
 .grid__row{
     display: flex;
     flex-wrap: wrap;
-    margin-left: -12px;
-    margin-right: -12px;
+    margin-left: -5px;
+    margin-right: -5px;
 }
 /*test*/
 .grid__column-2{
-    padding-left: 12px;
-    padding-right: 12px;
+    padding-left: 5px;
+    padding-right: 5px;
     width: 16,6667%;
 }
+.grid__column-2-4{
+    padding-left: 5px;
+    padding-right: 5px;
+    width: 20%;
+}
 .grid__column-10{
-    padding-left: 12px;
-    padding-right: 12px;
-    width: 89.3333%;
+    padding-left: 5px;
+    padding-right: 5px;
+    width: 83.3333%;
 }
 /*animation*/
 @keyframes fadein{
@@ -156,6 +162,7 @@ html{
     list-style: none;
     padding: 8px 16px;
     display: none;
+    z-index: 1;
     
 }
 .selec-input__item-link{
@@ -167,4 +174,38 @@ html{
 }
 .selec-input__item-link:hover{
     color: var(--primakey);
+}
+/*pagnation phan trang*/
+.pagnation{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+}
+.pagnation-item{
+    margin: 0 12px;
+}
+.pagnation-item__link-active .pagnation-item__link{
+    background-color: var(--primakey);
+    color: var(--white-color);
+}
+.pagnation-item__link-active .pagnation-item__link:hover{
+    background-color: #b42407;
+}
+.pagnation-item__link{
+    --height-pagnation: 30px;
+    display: block;
+    text-decoration: none;
+    font-size: 2rem;
+    font-weight: 300;
+    color: #939393;
+    min-width: 40px;
+    height: var(--height-pagnation);
+    text-align: center;
+    line-height: var(--height-pagnation);
+    border-radius: 2px;
+
+}
+.pagnation-item__icon{
+
 }
